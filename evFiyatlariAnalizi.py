@@ -65,12 +65,6 @@ plt.xticks([1, 2, 3, 4, 5, 6]) # X eksenindeki aralıklar
 plt.ylabel('House Price') # Y ekseni temsili
 plt.ylim(0, 13500000) # Y ekseni aralığı
 plt.yticks([1750000, 2900000, 4100000, 5200000, 6400000, 7500000, 8700000, 9850000, 11000000, 13300000]) # Y eksenindeki aralıklar
-'''
-# Y Ekseni
-plt.ylabel('Expensiveness') # Y ekseni temsili
-plt.ylim(0, 10) # Y ekseni aralığı
-plt.yticks([1, 2, 3, 4, 5, 6, 7, 8, 9]) # Y eksenindeki aralıklar
-'''
 
 # Graiği göster.
 plt.show()
