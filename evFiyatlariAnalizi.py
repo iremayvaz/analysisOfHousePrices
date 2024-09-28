@@ -30,7 +30,7 @@ def status(price):
 
 # Alan - pahalılık durumu
 housing['status'] = housing['price'].apply(status) # tabloya eklendi
-'''
+
 plt.title('Relationship between Area - Expensiveness') # Grafik başlığı
 plt.scatter(housing['area'], housing['status'], s=50, c='red', alpha=0.1, edgecolors='black') # Grafik iskeleti
 
@@ -43,11 +43,14 @@ plt.xticks([1500, 3000, 4500, 6000, 7500, 9000, 10500, 12000, 13500, 15000]) # X
 plt.ylabel('Expensiveness') # Y ekseni temsili
 plt.ylim(0, 10) # Y ekseni aralığı
 plt.yticks([1, 2, 3, 4, 5, 6, 7, 8, 9]) # Y eksenindeki aralıklar
-'''
+
+# Grafiğin okunurluğunu kolaylaştır
+plt.grid(color='green', linestyle='--', linewidth=0.5)
+
 # Graiği göster.
 plt.show() 
 
-
+'''
 # Relation between price and bedrooms/stories
 
 # Yatak odası - Fiyat İlişkisi
@@ -72,7 +75,7 @@ plt.grid(color='blue', linestyle='--', linewidth=0.5)
 # Graiği göster.
 plt.show()
 
-'''
+
 
 # Kat - Fiyat İlişkisi
 
