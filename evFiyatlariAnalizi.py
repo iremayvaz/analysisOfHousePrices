@@ -51,7 +51,7 @@ plt.show()
 # Relation between price and bedrooms/stories
 
 # Yatak odası - Fiyat İlişkisi
-
+'''
 plt.title('Bedrooms - Price Analysis') # Grafik başlığı
 
 plt.scatter(housing['bedrooms'], housing['price'], s=50, c='violet', alpha=0.1, edgecolors='purple') # Grafik iskeleti
@@ -70,17 +70,25 @@ plt.yticks([1750000, 2900000, 4100000, 5200000, 6400000, 7500000, 8700000, 98500
 plt.show()
 
 '''
-# Kata göre ortalama
-avgByStory = housing.groupby('stories')['price'].mean() 
 
-# Kata göre ortalamanın üstü altı yorumlaması
-def statusByStories(house):
-    avgPrice = avgByStory[house['stories']]
-    if house['price'] > avgPrice:
-        return 'expensive'
-    else:
-        return 'cheap'
-    
-# Kata göre pahalılık durumu
-housing['storiesStatus'] = housing.apply(statusByStories) # tabloya eklendi
-'''
+# Kat - Fiyat İlişkisi
+
+plt.title('Stories - Price Analysis') # Grafik başlığı
+
+plt.scatter(housing['stories'], housing['price'], s=50, c='yellow', alpha=0.1, edgecolors='orange') # Grafik iskeleti
+
+# X Ekseni
+plt.xlabel('Stories') # X ekseni neyi temsil ediyor?
+plt.xlim(0, 5) # X Ekseni aralığı
+plt.xticks([1, 2, 3, 4]) # X eksenindeki aralıklar
+
+# Y Ekseni
+plt.ylabel('House Prices') # Y ekseni neyi temsil ediyor?
+plt.ylim(0, 13500000) # Y ekseni aralığı
+plt.yticks([1750000, 2900000, 4100000, 5200000, 6400000, 7500000, 8700000, 9850000, 11000000, 13300000]) # Y eksenindeki aralıklar
+
+# Okunurluk açısından ızgara
+plt.grid(color='brown', linestyle='--', linewidth=0.5)
+
+# Grafiği göster.
+plt.show()
