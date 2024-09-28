@@ -51,7 +51,7 @@ plt.show()
 # Relation between price and bedrooms/stories
 
 # Yatak odası - Fiyat İlişkisi
-'''
+
 plt.title('Bedrooms - Price Analysis') # Grafik başlığı
 
 plt.scatter(housing['bedrooms'], housing['price'], s=50, c='violet', alpha=0.1, edgecolors='purple') # Grafik iskeleti
@@ -65,6 +65,9 @@ plt.xticks([1, 2, 3, 4, 5, 6]) # X eksenindeki aralıklar
 plt.ylabel('House Price') # Y ekseni temsili
 plt.ylim(0, 13500000) # Y ekseni aralığı
 plt.yticks([1750000, 2900000, 4100000, 5200000, 6400000, 7500000, 8700000, 9850000, 11000000, 13300000]) # Y eksenindeki aralıklar
+
+# Grafiğin okunurluğunu kolaylaştır
+plt.grid(color='blue', linestyle='--', linewidth=0.5)
 
 # Graiği göster.
 plt.show()
@@ -87,8 +90,9 @@ plt.ylabel('House Prices') # Y ekseni neyi temsil ediyor?
 plt.ylim(0, 13500000) # Y ekseni aralığı
 plt.yticks([1750000, 2900000, 4100000, 5200000, 6400000, 7500000, 8700000, 9850000, 11000000, 13300000]) # Y eksenindeki aralıklar
 
-# Okunurluk açısından ızgara
+# Grafiğin okunurluğunu kolaylaştır
 plt.grid(color='brown', linestyle='--', linewidth=0.5)
 
 # Grafiği göster.
 plt.show()
+'''
