@@ -50,7 +50,7 @@ plt.grid(color='green', linestyle='--', linewidth=0.5)
 # Graiği göster.
 plt.show() 
 
-'''
+
 # Relation between price and bedrooms/stories
 
 # Yatak odası - Fiyat İlişkisi
@@ -98,4 +98,3 @@ plt.grid(color='brown', linestyle='--', linewidth=0.5)
 
 # Grafiği göster.
 plt.show()
-'''
