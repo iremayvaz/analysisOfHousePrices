@@ -100,20 +100,24 @@ plt.grid(color='brown', linestyle='--', linewidth=0.5)
 # Grafiği göster.
 plt.show()
 '''
-
+'''
 # Bathrooms'a göre ortalama
 avgByBathrooms = housing.groupby('bathrooms')['price'].mean()
 
+# Evlerin banyo sayılarına göre ortalama fiyat 
 def avgPrice(numbers_bathrooms):
     return avgByBathrooms.get(numbers_bathrooms, None)
-        
+
+# CSV dosyasındaki tüm ev verilerine uygula
 housing['avgPrice_toBaths'] = housing['bathrooms'].apply(avgPrice)
 
 plt.title("Average Price Graph For Bathrooms") # Grafik başlığı
 
+# Grafik sütunları için renk dizisi
 colors = ['pink', 'violet', 'yellow', 'orange']
-                                                        
-plt.barh(avgByBathrooms.index, avgByBathrooms.values, color = colors)# Grafik iskeleti
+
+# Grafik iskeleti
+plt.barh(avgByBathrooms.index, avgByBathrooms.values, color = colors)
 
 # X Ekseni
 plt.xlabel('Ortalama')
@@ -128,16 +132,36 @@ plt.grid(color='red', linestyle='--', linewidth=0.3)
 
 # Grafiği göster
 plt.show() 
-
-print(avgByBathrooms)
-
-
 '''
-plt.title("Average Price Graph For Bathrooms")
-plt.barh(avgByBathrooms.index, avgByBathrooms.values, color=colors)  # Banyo sayısına göre ortalama fiyat
-plt.xlabel('Average Price')
-plt.ylabel('Bathrooms')
+
+# Furnishingstatus'a göre ortalama 
+avgByFurnishingstatus = housing.groupby('furnishingstatus')['price'].mean()
+
+# Evlerin eşya durumuna göre ortalama fiyat 
+def avgPriceForFurnishing(fStatus):
+    return avgByFurnishingstatus.get(fStatus, None)
+
+# CSV dosyasındaki tüm ev verilerine uygula
+housing['avgPrice_toFurnishing'] = housing['furnishingstatus'].apply(avgPriceForFurnishing)
+
+plt.title('Average Price About Furnishing Status ') # Grafik başlığı
+
+# Grafik dizisi için renk dizisi
+colors = ['green', 'blue', 'red']
+
+# Grafik iskeleti
+plt.barh(avgByFurnishingstatus.index, avgByFurnishingstatus.values, color = colors)
+
+# X Ekseni
+plt.ylabel('Furnishing Status')
+
+# Y Ekseni
+plt.xlabel('Average')
+plt.xticks([4000000, 5000000, 6000000])
+plt.xlim(2000000,8000000)
+
+# Grafiğin okunurluğunu kolaylaştır
+plt.grid(color='black', linestyle='--', linewidth=0.5)
+
+# Grafiği göster
 plt.show()
-'''
-# Furnishingstatus'e göre ortalama
-avgByFurnishing = housing.groupby('furnishingstatus')['price'].mean()
